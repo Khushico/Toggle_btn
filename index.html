@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en" color-mode="light">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dark Mode Demo</title>
+    <script>
+        if (
+            localStorage.getItem("color-mode") === "dark" ||
+            (window.matchMedia("(prefers-color-scheme: dark)").matches &&
+                !localStorage.getItem("color-mode"))
+        ) {
+            document.documentElement.setAttribute("color-mode", "dark");
+        }
+    </script>
+    <link rel="stylesheet" href="main.css" />
+</head>
+
+<body>
+    <svg style="display: none;">
+      <symbol viewBox="0 0 24 24" id="moon">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+      </symbol>
+      <symbol viewBox="0 0 24 24" id="sun">
+        <circle cx="12" cy="12" r="5"></circle>
+        <line x1="12" y1="1" x2="12" y2="3"></line>
+        <line x1="12" y1="21" x2="12" y2="23"></line>
+        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+        <line x1="1" y1="12" x2="3" y2="12"></line>
+        <line x1="21" y1="12" x2="23" y2="12"></line>
+        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+      </symbol>
+    </svg>
+    <main class="color-mode">
+        <section class="color-mode__section">
+            <header class="color-mode__header">
+                <button class="color-mode__btn light--hidden" aria-label="Toggle light mode">
+            Toggle Mode!
+            <svg aria-hidden="true">
+              <title>Light Mode</title>
+              <use href="#sun"></use>
+            </svg>
+          </button>
+                <button class="color-mode__btn dark--hidden" aria-label="Toggle dark mode">
+             Dark Mode!
+            <svg aria-hidden="true">
+              <title>Dark Mode</title>
+              <use href="#moon"></use>
+            </svg>
+          </button>
+            </header>
+            <div class="color-mode__container dark--hidden">
+                <h1>Hi, I'm light mode.</h1>
+                <div class="color-mode__link-container">
+                    <a href="https://ryanfeigenbaum.com/dark-mode" target="blank" class="color-mode__link">Read More: The Complete Guide to the Dark Mode Toggle</a
+            >
+          </div>
+          <h2>Jeff Bezos</h2>
+          <p>
+            Bezos was born in Albuquerque and raised in Houston and Miami. He graduated from Princeton University in 1986 with degrees in electrical engineering and computer science. He worked on Wall Street in a variety of related fields from 1986 to early 1994. Bezos founded Amazon in mid-1994 on a road trip from New York City to Seattle. The company began as an online bookstore and has since expanded to a variety of other e-commerce products and services, including video and audio streaming, cloud computing, and artificial intelligence. It is the world's largest online sales company, the largest Internet company by revenue, and the largest provider of virtual assistants and cloud infrastructure services through its Amazon Web Services branch.
+          </p>
+          <p>
+           
+          </p>
+          <p>
+            
+          </p>
+          <p class="color-mode__excerpt">
+            👆 This light excerpt is from Lewis Carroll's
+            <a
+              href="http://www.gutenberg.org/files/11/11-h/11-h.htm"
+              target="_blank"
+              ><em></em></a
+            >
+            (1865)
+          </p>
+        </div>
+        <div class="color-mode__container light--hidden">
+          <h1>Hi, I'm dark mode.</h1>
+          <div class="color-mode__link-container">
+            <a
+              href="https://ryanfeigenbaum.com/dark-mode"
+              target="blank"
+              class="color-mode__link"
+              >Read More: The Complete Guide to the Dark Mode Toggle</a
+            >
+          </div>
+          <h2>Jeff Bezos</h2>
+          <p>
+            Bezos was born in Albuquerque and raised in Houston and Miami. He graduated from Princeton University in 1986 with degrees in electrical engineering and computer science. He worked on Wall Street in a variety of related fields from 1986 to early 1994. Bezos founded Amazon in mid-1994 on a road trip from New York City to Seattle. The company began as an online bookstore and has since expanded to a variety of other e-commerce products and services, including video and audio streaming, cloud computing, and artificial intelligence. It is the world's largest online sales company, the largest Internet company by revenue, and the largest provider of virtual assistants and cloud infrastructure services through its Amazon Web Services branch.
+          </p>
+          <p>
+          
+          </p>
+
+         
+        </div>
+      </section>
+    </main>
+    <script src="main.js"></script>
+  </body>
+</html>
